@@ -8,9 +8,15 @@ variable "tags" {
   default = {}
 }
 
+variable "vpc_name" {
+  description = "Name of the VPC"
+  type = string
+}
+
 resource "aws_vpc" "main" {
   cidr_block = var.vpc_cidr
   tags = var.tags
+  name = var.vpc_name
 }
 
 output "vpc_id" {

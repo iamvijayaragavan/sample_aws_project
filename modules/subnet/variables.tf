@@ -13,9 +13,14 @@ variable "availability_zone" {
     type = string  
 }
 
-variable "subnets" {
-   description = "list of subnet address"
-   type = list()
+# variable "subnets" {
+#    description = "list of subnet address"
+#    type = list()
+# }
+
+variable "subnet_name" {
+  description = "Name for the subnets"
+  type = string
 }
 
 variable "tags" {

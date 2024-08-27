@@ -19,6 +19,8 @@ resource "aws_elb" "this" {
   }
 
   tags = var.tags
+
+  instances = var.instance_ids
 }
 
 
