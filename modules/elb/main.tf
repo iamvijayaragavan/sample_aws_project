@@ -6,8 +6,8 @@ resource "aws_elb" "this" {
   listener {
     instance_port     = 80
     instance_protocol = "HTTP"
-    port              = 80
-    protocol          = "HTTP"
+    lb_port           = 80
+    lb_protocol       = "HTTP"
   }
 
   health_check {
@@ -21,6 +21,5 @@ resource "aws_elb" "this" {
   tags = var.tags
 
   instances = var.instance_ids
+  cross_zone_load_balancing   = true
 }
-
-

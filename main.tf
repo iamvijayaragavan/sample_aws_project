@@ -11,7 +11,6 @@ module "s3_bucket" {
 module "vpc" {
   source      = "./modules/vpc"
   vpc_cidr  = var.vpc_cidr_block
-  vpc_name    = var.vpc_name
 }
 
 # Creating Subnets
@@ -20,7 +19,6 @@ module "subnet" {
   vpc_id             = module.vpc.vpc_id
   cidr_block         = var.subnet_cidrs
   availability_zone  = var.availability_zones
-  subnet_name        = var.subnet_name
 }
 
 # Creating Security Group

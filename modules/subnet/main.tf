@@ -1,5 +1,4 @@
 resource "aws_subnet" "single" {
-  subnet_name       = var.subnet_name
   vpc_id            = var.vpc_id
   cidr_block        = var.cidr_block
   availability_zone = var.availability_zone

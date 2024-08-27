@@ -18,10 +18,10 @@ variable "availability_zone" {
 #    type = list()
 # }
 
-variable "subnet_name" {
-  description = "Name for the subnets"
-  type = string
-}
+# variable "subnet_name" {
+#   description = "Name for the subnets"
+#   type = string
+# }
 
 variable "tags" {
   type = map(string)
