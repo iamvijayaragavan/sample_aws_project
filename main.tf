@@ -52,11 +52,13 @@ module "ebs_volume" {
 
 # Creating Ec2 instance
 module "ec2_instance" {
-  source             = "./modules/ec2_instance"
+  source             = "./modules/ec2"
   ami_id             = var.ami_id
   instance_type      = var.instance_type
   key_name           = var.key_name
-  instance_name      = "my-instance"
+  ebs_volume_id      = module.ebs_volume.ebs_volume_id
+  ebs_size           = var.ebs_volume_sizes
+  ebs_type           = var.volume_type
   security_group_id  = module.security_group.security_group_id
   subnet_id          = module.subnet.subnet_ids[0]  
   user_data          = file("scripts/user_data.sh")

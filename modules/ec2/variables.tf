@@ -19,7 +19,7 @@ variable "user_data" {
   type = string
 }
 
-variable "security_groups" {
+variable "security_group_id" {
   description = "The security groups for the EC2 instance."
   type        = list(string)
   default     = []
@@ -44,4 +44,8 @@ variable "ebs_size" {
 variable "ebs_type" {
   description = "The type of the root EBS volume."
   type        = string
+}
+
+variable "subnet_id" {
+ description = "Subnet ID to attached into instance" 
 }

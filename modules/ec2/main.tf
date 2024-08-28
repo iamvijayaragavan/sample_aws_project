@@ -4,8 +4,8 @@ resource "aws_instance" "test" {
   key_name      = var.key_name
   user_data     = var.user_data
   tags          = var.tags
-
-  security_groups = var.security_groups
+  subnet_id     = var.subnet_id
+  security_groups = var.security_group_id
 
   root_block_device {
     volume_size = var.ebs_size
@@ -16,5 +16,5 @@ resource "aws_instance" "test" {
 resource "aws_volume_attachment" "attachment" {
   device_name = "/dev/xvdf"
   volume_id   = var.ebs_volume_id
-  instance_id = aws_instance.this.id
+  instance_id = aws_instance.test.id
 }
