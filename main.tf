@@ -43,10 +43,11 @@ module "security_group" {
 
 # Creating EBS Volumes
 module "ebs_volume" {
-  source             = "./modules/ebs_volume"
-  volume_sizes       = var.ebs_volume_sizes
-  availability_zones = var.availability_zones
-  volume_name        = "my-ebs-volume"
+  source             = "./modules/ebs"
+  size               = var.ebs_volume_sizes
+  availability_zone  = var.availability_zones
+  name               = var.ebs_volume_name
+  type               = var.volume_type
 }
 
 # Creating Ec2 instance

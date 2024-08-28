@@ -36,7 +36,8 @@ description = "Port 80 is allowed"
 
 #vpc_id = module.vpc.vpc_id
 
-ebs_volume_sizes = [10, 50]  
+ebs_volume_name = poc-ebs
+ebs_volume_sizes = 10 
 
 user_data = "scripts/user_data.sh"  
 

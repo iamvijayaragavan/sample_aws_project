@@ -130,5 +130,15 @@ variable "subnet_ids" {
 
 variable "ebs_volume_sizes" {
   description = "Size of the EBS volume is given"
-  type = list(string)
+  type = string
+}
+
+variable "ebs_volume_name" {
+  description = "Name of the EBS volume"
+  type = string
+}
+
+variable "volume_type" {
+  description = "EBS Volume class type"
+  type = string
 }
