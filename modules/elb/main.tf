@@ -1,7 +1,7 @@
 resource "aws_elb" "this" {
   name               = var.elb_name
   availability_zones = var.availability_zones
-  subnets            = var.subnets
+  subnets            = var.subnet_ids
 
   listener {
     instance_port     = 80

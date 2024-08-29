@@ -13,8 +13,9 @@ module "vpc" {
   vpc_cidr  = var.vpc_cidr_block
 }
 
-# Creating Subnets
+# Creating Subnet
 module "subnet" {
+  count              = 2
   source             = "./modules/subnet"
   vpc_id             = module.vpc.vpc_id
   cidr_block         = var.subnet_cidrs
@@ -60,7 +61,7 @@ module "ec2_instance" {
   ebs_size           = var.ebs_volume_sizes
   ebs_type           = var.volume_type
   security_group_id  = module.security_group.security_group_id
-  subnet_id          = module.subnet.subnet_ids[0]  
+  subnet_id          = module.subnet.subnet_id
   user_data          = file("scripts/user_data.sh")
 }
 
@@ -68,7 +69,7 @@ module "ec2_instance" {
 module "elb" {
   source             = "./modules/elb"
   elb_name           = var.elb_name
-  subnets            = var.subnet_ids
+  subnet_ids         = [ module.subnet.subnet_id ]
   availability_zones = var.availability_zones
   instance_ids       = module.ec2_instance.*.instance_id
 }

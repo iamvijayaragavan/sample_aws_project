@@ -108,11 +108,6 @@ variable "elb_name" {
   type = string
 }
 
-variable "subnet_ids" {
-  description = "Given subnet ID"
-  type = list(string)
-}
-
 variable "ebs_volume_sizes" {
   description = "Size of the EBS volume is given"
   type = string
