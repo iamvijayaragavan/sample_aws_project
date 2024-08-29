@@ -1,6 +1,6 @@
 variable "vpc_cidr" {
     description = "CIDR address space for VPC "
-    type = "string"
+    type = string
 }
 
 variable "tags" {

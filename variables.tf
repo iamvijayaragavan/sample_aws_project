@@ -142,3 +142,8 @@ variable "volume_type" {
   description = "EBS Volume class type"
   type = string
 }
+
+variable "ebs_type" {
+  description = "It describes the type of EBS volume"
+  type = string
+}
