@@ -38,16 +38,6 @@ variable "instance_name" {
   type        = string
 }
 
-variable "security_group_id" {
-  description = "The ID of the security group to associate with the EC2 instance."
-  type        = string
-}
-
-variable "subnet_id" {
-  description = "The ID of the subnet to launch the EC2 instance in."
-  type        = string
-}
-
 variable "subnet_cidrs" {
     description = "Subnet CIDR address space"
     type = string
@@ -56,11 +46,6 @@ variable "subnet_cidrs" {
 variable "availability_zones" {
     description = "Availalbity Zone - AZ"
     type = string
-}
-
-variable "subnet_name" {
-  description = "Name for the subnet"
-  type = string
 }
 
 variable "security_name" {
@@ -140,10 +125,5 @@ variable "ebs_volume_name" {
 
 variable "volume_type" {
   description = "EBS Volume class type"
-  type = string
-}
-
-variable "ebs_type" {
-  description = "It describes the type of EBS volume"
   type = string
 }

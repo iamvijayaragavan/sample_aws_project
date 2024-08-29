@@ -23,8 +23,8 @@ ingress_to_port = 80
 ingress_protocol = TCP
 ingress_cidr_blocks = ["0.0.0.0/0"]
 
-egress_from_port = 80
-egress_to_port = 80
+egress_from_port = 0
+egress_to_port = 0
 egress_protocol = TCP
 egress_cidr_blocks = ["0.0.0.0/0"]
 
@@ -38,8 +38,11 @@ description = "Port 80 is allowed"
 
 ebs_volume_name = poc-ebs
 ebs_volume_sizes = 10 
-
+volume_type = gp3
 user_data = "scripts/user_data.sh"  
 
 elb_name = aws-poc-elb
 subnet_ids =  [ module.subnet.subnet_ids ]
+
+instance_name = poc-test
+security_name = nginx-public-sg

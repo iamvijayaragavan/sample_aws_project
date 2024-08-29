@@ -18,7 +18,7 @@ output "ebs_volume_ids" {
   value       = module.ebs_volume.volume_ids
 }
 
-output "subnet_ids" {
+output "security_group_id" {
   description = "The IDs of the subnets."
   value       = module.subnet.subnet_ids
 }
