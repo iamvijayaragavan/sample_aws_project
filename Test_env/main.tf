@@ -47,7 +47,7 @@ module "internet_gateway" {
 module "route_assosication" {
     source = "../modules/IG-assosication"
     vpc_id = module.vpc.vpc_id
-    subnet_id = [ module.subnet.subnet_id ]
+    subnet_id = module.subnet.subnet_id
     gateway_id = module.internet_gateway.ig_id
     depends_on = [ module.internet_gateway ]
 }
@@ -105,6 +105,6 @@ module "elb" {
   source             = "../modules/elb"
   elb_name           = var.elb_name
   subnet_ids         = module.subnet.subnet_id
-  availability_zones = var.availability_zones
+  availability_zones = [ var.availability_zones ]
   instance_ids       = [ module.ec2_instance-1.instance_id, module.ec2_instance-2.instance_id ]
 }
