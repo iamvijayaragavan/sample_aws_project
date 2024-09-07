@@ -13,25 +13,6 @@ variable "availability_zone" {
     type = string  
 }
 
-# variable "subnets" {
-#    description = "list of subnet address"
-#    type = list(string)
-# }
-
-
-variable "subnets" {
-  description = "List of subnets to create"
-  type = list(object({
-    cidr_block        = string
-    availability_zone = string
-  }))
-}
-
-# variable "subnet_name" {
-#   description = "Name for the subnets"
-#   type = string
-# }
-
 variable "tags" {
   type = map(string)
   default = {}

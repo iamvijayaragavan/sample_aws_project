@@ -9,7 +9,7 @@ variable "availability_zones" {
 
 variable "subnet_ids" {
   description = "Subnet in which ELB need to be created"
-  type        = list(string)
+  type        = string
 }
 
 variable "tags" {

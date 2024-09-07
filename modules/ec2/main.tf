@@ -1,4 +1,4 @@
-resource "aws_instance" "test" {
+resource "aws_instance" "this" {
   ami           = var.ami_id
   instance_type = var.instance_type
   key_name      = var.key_name
@@ -16,5 +16,5 @@ resource "aws_instance" "test" {
 resource "aws_volume_attachment" "attachment" {
   device_name = "/dev/xvdf"
   volume_id   = var.ebs_volume_id
-  instance_id = aws_instance.test.id
+  instance_id = aws_instance.this.id
 }

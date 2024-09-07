@@ -3,9 +3,9 @@ s3_bucket_name = "poc-state-bucket"
 
 vpc_name = "testvpc"
 
-vpc_cidr_block = "10.0.0.0/24"
+vpc_cidr_block = "10.0.0.0/22"
 
-subnet_cidrs = "10.0.1.0/27"
+subnet_cidrs = "10.0.1.0/26"
 availability_zones = "eu-west-1a"
 
 # subnet_cidrs = [
